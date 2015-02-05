@@ -1,0 +1,13 @@
+﻿{
+  "Inserts": 100000,
+  "InsertThreads": 2,
+  "InsertBatchSize": 100,
+  "InsertBatchDelayMs": 0,
+  "UseTransactionForInsertBatch": false,
+  "SelectThreads": 1,
+  "SelectDelayMs": 100,
+  "SetupProcName": "SetupSampleData",
+  "InsertProcName": "InsertSampleData",
+  "SelectProcName": "FindSampleData",
+  "QueryTimeoutSeconds": 120
+}
