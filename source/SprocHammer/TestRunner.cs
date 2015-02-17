@@ -262,7 +262,7 @@ namespace SprocHammer
         }
 
         /// <summary>
-        /// Start loop for sampling results.
+        /// Write one results line.
         /// </summary>
         private void SampleData()
         {
