@@ -123,6 +123,9 @@ namespace SprocHammer
             output.WriteLine();
         }
 
+        /// <summary>
+        /// Run data generation loop.
+        /// </summary>
         private void GenerateData()
         {
             Random random;
@@ -195,6 +198,9 @@ namespace SprocHammer
             }
         }
 
+        /// <summary>
+        /// Run data select loop.
+        /// </summary>
         private void SelectData()
         {
             Thread.Sleep(_random.Next(200));
@@ -255,6 +261,9 @@ namespace SprocHammer
             }
         }
 
+        /// <summary>
+        /// Start loop for sampling results.
+        /// </summary>
         private void SampleData()
         {
             if (EnoughAlready())

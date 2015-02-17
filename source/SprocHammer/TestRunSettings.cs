@@ -21,42 +21,82 @@ namespace SprocHammer
             QueryTimeoutSeconds = 30;
         }
 
+        /// <summary>
+        /// Name used to identify the run. Will be taken from settings file name if not specified.
+        /// </summary>
         public string RunName { get; set; }
 
+        /// <summary>
+        /// Number of inserts to perform before stopping.
+        /// </summary>
         [Required]
         [Range(1, int.MaxValue)]
         public long Inserts { get; set; }
 
+        /// <summary>
+        /// Number of concurrent insert threads.
+        /// </summary>
         [Required]
         public int InsertThreads { get; set; }
         
+        /// <summary>
+        /// Number of inserts to run in one batch.
+        /// </summary>
         [Required]
         public int InsertBatchSize { get; set; }
 
+        /// <summary>
+        /// Delay to use between insert batches (ms).
+        /// </summary>
         public int InsertBatchDelayMs { get; set; }
 
+        /// <summary>
+        /// If true, run each insert batch within a unique transaction.
+        /// </summary>
         public bool UseTransactionForInsertBatch { get; set; }
 
+        /// <summary>
+        /// Number of concurrent select threads.
+        /// </summary>
         [Required]
         public int SelectThreads { get; set; }
 
+        /// <summary>
+        /// Delay between each select execution.
+        /// </summary>
         public int SelectDelayMs { get; set; }
 
+        /// <summary>
+        /// Name of proc to call at beginning to set up the run.
+        /// </summary>
         public string SetupProcName { get; set; }
 
+        /// <summary>
+        /// Name of the proc to use for inserting data.
+        /// </summary>
         [Required]
         public string InsertProcName { get; set; }
 
+        /// <summary>
+        /// Name of the proc to use for finding data.
+        /// </summary>
         [Required]
         public string SelectProcName { get; set; }
 
         /// <summary>
-        /// Recompile select after N executions.
+        /// Force SQL Server to recompile select query after N executions.
+        /// If zero, no force recompilation will be done.
         /// </summary>
         public int RecompileSelectAfter { get; set; }
 
+        /// <summary>
+        /// Timeout for query execution (s).
+        /// </summary>
         public int QueryTimeoutSeconds { get; set; }
 
+        /// <summary>
+        /// Output path for log, otherwise use current directory.
+        /// </summary>
         public string OutputPath { get; set; }
 
         public override string ToString()
